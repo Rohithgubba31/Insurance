@@ -1,1 +1,6 @@
-img/video.mp4 
+# Ignore all videos
+*.mp4
+
+# Allow this specific video
+!img/video.mp4
+
