@@ -93,6 +93,7 @@
     // });
 
     // ===== About Image Auto Slider =====
+// ===== About Image Auto Slider =====
 if ($(".about-slides").length) {
     let index = 0;
     const $slides = $(".about-slides");
@@ -105,9 +106,11 @@ if ($(".about-slides").length) {
             index = 0;
         }
 
+        // IMPORTANT: negative translateX
         $slides.css("transform", "translateX(-" + (index * 100) + "%)");
-    }, 3000); // ⏱️ auto swipe every 3 sec
+    }, 3000);
 }
+
 
 
 
