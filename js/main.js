@@ -92,6 +92,24 @@
     //     })
     // });
 
+    // ===== About Image Auto Slider =====
+if ($(".about-slides").length) {
+    let index = 0;
+    const $slides = $(".about-slides");
+    const total = $slides.children().length;
+
+    setInterval(function () {
+        index++;
+
+        if (index >= total) {
+            index = 0;
+        }
+
+        $slides.css("transform", "translateX(-" + (index * 100) + "%)");
+    }, 3000); // ⏱️ auto swipe every 3 sec
+}
+
+
 
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({

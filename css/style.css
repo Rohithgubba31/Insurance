@@ -81,18 +81,78 @@
     z-index: 5;
 }
 
-.about-image-stack {
-    max-width: 420px;      /* 🔽 smaller image width */
-    margin-left: 0;        /* keep image left */
+/* ===== About Image Slider ===== */
+.about-slider {
+  max-width: 420px;              /* Desktop */
+  width: 100%;
+  margin-left: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.about-img {
-    width: 100%;
-    max-height: 460px;     /* 🔽 control height */
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+.about-slides {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
 }
+
+.about-slides img {
+  width: 100%;
+  max-height: 460px;             /* Desktop height */
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== Tablet (≤ 992px) ===== */
+@media (max-width: 992px) {
+  .about-slider {
+    max-width: 360px;
+    margin: 0 auto;              /* center image */
+  }
+
+  .about-slides img {
+    max-height: 400px;
+  }
+}
+
+/* ===== Mobile (≤ 768px) ===== */
+@media (max-width: 768px) {
+  .about-slider {
+    max-width: 300px;
+    margin: 0 auto 30px;         /* spacing above text */
+  }
+
+  .about-slides img {
+    max-height: 320px;
+  }
+}
+
+/* ===== Small Mobile (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .about-slider {
+    max-width: 260px;
+  }
+
+  .about-slides img {
+    max-height: 280px;
+  }
+}
+
+/* ===== Improve About Image Size on Small Screens ===== */
+@media (max-width: 576px) {
+  .about-slider,
+  .about-image-stack {
+    max-width: 340px;   /* ⬅ increase from ~260–300 to 340 */
+    margin: 0 auto 24px;
+  }
+
+  .about-slides img,
+  .about-img {
+    max-height: 380px;  /* ⬅ slightly taller */
+  }
+}
+
 
 
 
@@ -101,7 +161,7 @@
         max-width: 100%;
     }
 
-    .about-img.img-offset {
+    .aaboutbout-img.img-offset {
         position: relative;
         top: 0;
         left: 0;
